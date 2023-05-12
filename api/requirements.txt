@@ -1,0 +1,7 @@
+PrettyTable
+requests
+bottle
+user-agents
+unipath
+google-cloud-pubsub
+redis
