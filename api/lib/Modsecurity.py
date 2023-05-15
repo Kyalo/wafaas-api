@@ -1,7 +1,7 @@
 import logging
 import requests
 from urllib.parse import urlparse, urljoin
-from unipath import Path
+from pathlib import Path
 import json
 
 MOSEC_SEPARATOR = "MODSECPARSERSEPARATOR"
