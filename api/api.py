@@ -1,4 +1,5 @@
 from bottle import route, run, request
+# from flask import Flask
 import requests
 import pprint
 import json
@@ -15,8 +16,8 @@ parser.add_argument('--port', type=int, default=8080, help='an integer for the a
 args = parser.parse_args()
 pp = pprint.PrettyPrinter(indent=4)
 
-app = Flask(__name__)
-app.config.from_object(Config)
+# app = Flask(__name__)
+# app.config.from_object(Config)
 
 @route('/ping', method='GET')
 def ping():
