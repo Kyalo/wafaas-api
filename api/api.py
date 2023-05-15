@@ -80,11 +80,11 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     run(host='0.0.0.0', port=args.port)
 
-#DB2 SQL error
+# DB2 SQL error
 
-#curl -s localhost:8080/process_request -XPOST -d '{"method":"GET", "path":"../../../../etc/passwd?param=SELECT * FROM INFORMATION_SCHEMA&other=../../../../../etc/passwd", "headers":{}, "data":{}}'|jq
+# curl -s localhost:8080/process_request -XPOST -d '{"method":"GET", "path":"../../../../etc/passwd?param=SELECT * FROM INFORMATION_SCHEMA&other=../../../../../etc/passwd", "headers":{}, "data":{}}'|jq
 
-#lib.Event.encrypt_data("Exception details: com.mysql.jdbc.MysqlDataTruncation")
-#curl -s localhost:8082/process_request -XPOST -d '{"method":"GET", "path":"../../../../etc/passwd?param=SELECT * FROM INFORMATION_SCHEMA&other=../../../../../etc/passwd", "headers":{"X_CONTENT_FIELD_WAF":"dg24/s0DwuzP55rbF/9BD8kjPNDBfbH9WSqToxxZI5atRQ5kxEbtkEQaG8XqYrHENjeztqOI2Jn1TeeaYlIkcmPWOKKHQSzCe9VOvLLfosY="}, "data":{}}'|jq
+# lib.Event.encrypt_data("Exception details: com.mysql.jdbc.MysqlDataTruncation")
+# curl -s localhost:8082/process_request -XPOST -d '{"method":"GET", "path":"../../../../etc/passwd?param=SELECT * FROM INFORMATION_SCHEMA&other=../../../../../etc/passwd", "headers":{"X_CONTENT_FIELD_WAF":"dg24/s0DwuzP55rbF/9BD8kjPNDBfbH9WSqToxxZI5atRQ5kxEbtkEQaG8XqYrHENjeztqOI2Jn1TeeaYlIkcmPWOKKHQSzCe9VOvLLfosY="}, "data":{}}'|jq
 
-#curl -s localhost:8080/process_request -XPOST -d '{"method":"GET", "path":"", "headers":{}, "data":{}, "content":"0lez+ZI1aE1Vj8m9B28ZCegKDtI5//7cwY/IolMPQerCW3yxV+o+GWmLV5tLpSVE"}'|jq
+# curl -s localhost:8080/process_request -XPOST -d '{"method":"GET", "path":"", "headers":{}, "data":{}, "content":"0lez+ZI1aE1Vj8m9B28ZCegKDtI5//7cwY/IolMPQerCW3yxV+o+GWmLV5tLpSVE"}'|jq
