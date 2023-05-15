@@ -1,6 +1,6 @@
 import logging
 import requests
-from urlparse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin
 from unipath import Path
 import json
 
