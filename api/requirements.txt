@@ -1,7 +1,8 @@
 PrettyTable
-requests
+requests==2.27.1
 bottle
 user-agents
 unipath
 google-cloud-pubsub
 redis
+Flask==2.2.2
