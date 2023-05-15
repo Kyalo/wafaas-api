@@ -79,7 +79,7 @@ ADD manage.py /api/manage.py
 RUN chmod +x  /api/manage.py
 
 # Upload the api, Modsecurity, RuleEngine, Event and _init_ files
-ADD api/app.py             api/app.py
+ADD api/api.py             api/api.py
 ADD api/lib/Modsecurity.py api/lib/Modsecurity.py
 ADD api/lib/RuleEngine.py  api/lib/RuleEngine.py
 ADD api/lib/RateLimiter.py api/lib/RateLimiter.py
