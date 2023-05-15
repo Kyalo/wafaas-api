@@ -15,12 +15,12 @@ def _convert_keys_to_string(headers):
 
 def _to_chunks(l, n):
     n = max(1, n)
-    return (l[i:i+n] for i in xrange(0, len(l), n))
+    return (l[i:i+n] for i in range(0, len(l), n))
 
 def _parse_modsec_response(modsec_content):
     results = modsec_content.replace("EMPTYSPACE"," ").split(MOSEC_SEPARATOR)
     result_list = list(_to_chunks(results, 4))[:-1]
-    #logging.debug(result_list)
+    logging.debug(result_list)
 
     alerts = []
     tmp_alert = {}
@@ -50,21 +50,21 @@ def review_modsec(request_data):
 
     if 'content' in request_data:
         headers['X-CONTENT-FIELD-WAF'] = request_data['content']
-        #logging.info("Sending in X-CONTENT-FIELD-WAF => %s" % request_data['content'])
+        logging.info("Sending in X-CONTENT-FIELD-WAF => %s", request_data['content'])
 
     # fix path if necessary
     if (not path.startswith("/")):
-        path = "/%s" % path
+        path = f"/{path}"
 
-    modsec_url_request = "%s%s" % (MODSEC_URL, path)
+    modsec_url_request = f"{MODSEC_URL}{path}"
 
     parsed_url = urlparse(modsec_url_request)
     path       = Path(parsed_url.path).absolute()
     query      = parsed_url.query
 
-    complete_url = "%s%s" % (MODSEC_URL, path)
+    complete_url = f"{MODSEC_URL}{path}"
     if (len(query) > 0):
-        complete_url = "%s?%s" % (complete_url, query)
+        complete_url = f"{complete_url}?{query}"
 
     if (method == "GET"):
         if (len(headers) > 0):
@@ -82,7 +82,7 @@ def review_modsec(request_data):
             logging.info("Performing POST request without headers")
 
     alerts = _parse_modsec_response(r.content)
-    #logging.debug(r.content)
+    logging.debug(r.content)
 
     result = {}
     if (len(alerts)):
